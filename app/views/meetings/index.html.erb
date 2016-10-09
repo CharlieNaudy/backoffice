@@ -1,0 +1,18 @@
+<h1>Listing meetings</h1>
+ 
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Participants</th>
+  </tr>
+ 
+  <% @meetings.each do |meeting| %>
+    <tr>
+      <td><%= meeting.date %></td>
+      <td><%= meeting.location %></td>
+      <td><%= meeting.participants %></td>
+      <td><%= link_to 'Show', meeting_path(meeting) %></td>
+    </tr>
+  <% end %>
+</table>
