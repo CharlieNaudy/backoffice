@@ -1520,3 +1520,59 @@ Processing by MeetingsController#index as HTML
 Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2016-10-09 11:40:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 529ms (Views: 515.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/meetings" for ::1 at 2016-10-09 11:40:54 +0200
+Processing by MeetingsController#index as HTML
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  Rendered meetings/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetings/9" for ::1 at 2016-10-09 11:40:58 +0200
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 69ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/meetings" for ::1 at 2016-10-09 11:41:01 +0200
+Processing by MeetingsController#index as HTML
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  Rendered meetings/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/meetings" for ::1 at 2016-10-09 11:43:29 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#index as HTML
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  Rendered meetings/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 311ms (Views: 294.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-10-09 11:43:33 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/meetings/new" for ::1 at 2016-10-09 11:43:43 +0200
+Processing by MeetingsController#new as HTML
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+
