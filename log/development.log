@@ -1604,3 +1604,50 @@ Completed 200 OK in 82ms (Views: 79.2ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-10-09 14:35:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 351ms (Views: 335.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/meetings/new" for ::1 at 2016-10-09 14:35:48 +0200
+Processing by MeetingsController#new as HTML
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 58ms (Views: 53.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meetings" for ::1 at 2016-10-09 14:35:55 +0200
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0f9IF2LcCi7y/gQTa65NPnkNyN2erNdjFU/yDEJQTbN6ke4AEh4qkyX6aljAonNitd8AuTS7HONPHhHMdogVpQ==", "meeting"=>{"date"=>"ppp", "location"=>"mmm", "participants"=>"lll"}, "commit"=>"Save Meeting"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "participants", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "ppp"], ["location", "mmm"], ["participants", "lll"], ["created_at", 2016-10-09 12:35:55 UTC], ["updated_at", 2016-10-09 12:35:55 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/meetings/11
+Completed 302 Found in 57ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/meetings/11" for ::1 at 2016-10-09 14:35:55 +0200
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMeeting Load (0.6ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/meetings" for ::1 at 2016-10-09 14:35:58 +0200
+Processing by MeetingsController#index as HTML
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  Rendered meetings/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
